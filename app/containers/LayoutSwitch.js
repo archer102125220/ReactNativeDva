@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'dva';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import Socket from './../utils/socket';

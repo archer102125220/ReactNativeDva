@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'dva';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 import { StyleSheet} from 'react-native';
 import Button from './../components/Button';
