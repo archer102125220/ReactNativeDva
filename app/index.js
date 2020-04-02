@@ -6,7 +6,8 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,7 +26,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+import Button from './components/Button';
+
+/*const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -55,7 +58,48 @@ const App: () => React$Node = () => {
       </SafeAreaView>
     </>
   );
-};
+};*/
+
+class App extends Component {
+  state = {
+  }
+
+  render() {
+      return (
+        <>
+          <StatusBar barStyle="dark-content" />
+            <SafeAreaView>
+              <ScrollView
+                contentInsetAdjustmentBehavior="automatic"
+                style={styles.scrollView}>
+                <Header />
+                  {global.HermesInternal == null ? null : (
+                  <View style={styles.engine}>
+                    <Text style={styles.footer}>Engine: Hermes</Text>
+                  </View>
+                )}
+              <View style={styles.body}>
+                <View style={styles.sectionContainer}>
+                  <Text style={styles.sectionTitle}>Step One</Text>
+                  <Text style={styles.sectionDescription}>
+                      Edit <Text style={styles.highlight}>App.js</Text> to change this
+                      screen and then come back to see your edits.
+                  </Text>
+                </View>
+                <Button onPress={function(){ console.log('按到我了') }}>
+                  TouchableOpacity Button
+                </Button>
+              </View>
+              </ScrollView>
+            </SafeAreaView>
+          </>
+        );
+  }
+
+  static propTypes = {
+      children: PropTypes.any
+  }
+}
 
 const styles = StyleSheet.create({  
   scrollView: {
@@ -93,22 +137,7 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
-  },
-  button: {
-    margin: 20,
-    padding: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    backgroundColor: '#406E9F',
-    borderRadius: 9,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
+  }
 });
 
 export default App;
