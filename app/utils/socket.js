@@ -1,9 +1,10 @@
 
 import Io from 'socket.io-client';
 import api from './../apiConfig';
+import config from './../../app.json';
 
 const { socket: socketURL } = api;
-const nodeEnv = process.env.NODE_ENV;
+const nodeEnv = config.NODE_ENV;
 
 class Socket extends Io {
     constructor(props) {
