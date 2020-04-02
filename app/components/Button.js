@@ -13,15 +13,17 @@ class Button extends Component {
   render() {
       const {props}=this;
       const { children } = props;
+      const style=(props.style !== undefined?props.style:styles);
 
       return (
-        <TouchableOpacity style={styles.button} {...props}>
+        <TouchableOpacity style={style.button} {...props}>
           <Text style={styles.buttonText}>{children}</Text>
         </TouchableOpacity>);
   }
 
   static propTypes = {
-      children: PropTypes.any
+      children: PropTypes.any,
+      style: PropTypes.any,
   }
 }
 const styles = StyleSheet.create({  
