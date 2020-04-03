@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { StyleSheet} from 'react-native';
-import Button from './../components/Button';
 import Socket from './../utils/socket';
 import yay from '../assets/yay.jpg';
 
-//https://www.sipios.com/blog-tech/how-to-use-styled-components-with-material-ui-in-a-react-app
 const styles =  StyleSheet.create({
   normal: {
     fontFamily: 'Georgia, sans-serif',
@@ -50,16 +48,13 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { classes, users } = this.props;
-    const buttons = users.map(element => ({ element: element.account, event: () => Socket.clickEventSender({ id: 10 }) }));
     return (
-      <div className={classes.normal}>
-        <h1 className={classes.title}>Yay! Welcome to dva!</h1>
-        <div className={classes.welcome} />
-        <ul className={classes.list}>
+      <div className={styles.normal}>
+        <h1 className={styles.title}>Yay! Welcome to dva!</h1>
+        <div className={styles.welcome} />
+        <ul className={styles.list}>
           <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
           <li><a href='https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md'>Getting Started</a></li>
-          <li><Button buttons={buttons} /></li>
         </ul>
       </div>
     );
