@@ -30,7 +30,7 @@ import Button from './components/Button';
 /*const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle='dark-content' />
     </>
   );
 };*/
@@ -42,10 +42,10 @@ class App extends Component {
   render() {
       return (
         <>
-          <StatusBar barStyle="dark-content" />
+          <StatusBar barStyle='dark-content' />
             <SafeAreaView>
               <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
+                contentInsetAdjustmentBehavior='automatic'
                 style={styles.scrollView}>
                 <Header />
                   {global.HermesInternal == null ? null : (
