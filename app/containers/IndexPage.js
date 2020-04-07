@@ -2,35 +2,34 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { StyleSheet} from 'react-native';
+import { StyleSheet,ImageBackground,Text,View,FlatList  } from 'react-native';
 import Socket from './../utils/socket';
 import yay from '../assets/yay.jpg';
+import A from './../components/A';
 
 const styles =  StyleSheet.create({
   normal: {
     fontFamily: 'Georgia, sans-serif',
-    marginTop: '3em',
+    marginTop: '0.1%',//'3em'
     textAlign: 'center',
   },
   title: {
-    fontSize: '2.5rem',
+    fontSize: 2.5,//'2.5rem'
     fontWeight: 'normal',
-    letterSpacing: '-1px',
+    letterSpacing: -1,//'-1px'
   },
   welcome: {
-    height: '328px',
-    background: `url(${yay}) no-repeat center 0`,
-    backgroundSize: '388px 328px',
+    height: 328,//'328px'
+    width: 388,//'388px'
   },
   list: {
-    fontSize: '1.2em',
-    marginTop: '1.8em',
-    listStyle: 'none',
-    lineHeight: '1.5em',
-    '& code': {
-      background: '#f7f7f7',
-    }
+    fontSize: 1.2,//'1.2em'
+    marginTop: '0.1%',//'1.8em'
+    lineHeight: 1.5,//'1.5em'
   },
+  code: {
+      backgroundColor: '#f7f7f7',
+    }
 });
 
 const mapStateToProps = (state) => ({
@@ -49,14 +48,16 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div className={styles.normal}>
-        <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-        <div className={styles.welcome} />
-        <ul className={styles.list}>
-          <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-          <li><a href='https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md'>Getting Started</a></li>
-        </ul>
-      </div>
+      <View style={styles.normal}>
+        <Text h1 style={styles.title}>Yay! Welcome to dva!</Text>
+        <ImageBackground source={yay} style={styles.welcome}/>
+        <FlatList style={styles.list}
+          data={[
+            { key:(<>To get started, edit <Text style={styles.code}>src/index.js</Text> and save to reload.</>) },
+            { key:<A href='https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md'>Getting Started</A>}
+          ]}
+        />
+      </View>
     );
   }
   static propTypes = {

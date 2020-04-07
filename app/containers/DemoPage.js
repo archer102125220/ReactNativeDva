@@ -7,41 +7,14 @@ import { SafeAreaView,
   ScrollView,
   View,
   Text,
-  StatusBar,
-  StyleSheet
+  StatusBar
 } from 'react-native'; 
-import { Header } from 'react-native/Libraries/NewAppScreen';
+import {
+    Header,
+    Colors
+} from 'react-native/Libraries/NewAppScreen';
   
 import Button from './../components/Button';
-import Socket from './../utils/socket';
-import yay from '../assets/yay.jpg';
-
-const styles =  StyleSheet.create({
-  normal: {
-    fontFamily: 'Georgia, sans-serif',
-    marginTop: '3em',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '2.5rem',
-    fontWeight: 'normal',
-    letterSpacing: '-1px',
-  },
-  welcome: {
-    height: '328px',
-    background: `url(${yay}) no-repeat center 0`,
-    backgroundSize: '388px 328px',
-  },
-  list: {
-    fontSize: '1.2em',
-    marginTop: '1.8em',
-    listStyle: 'none',
-    lineHeight: '1.5em',
-    '& code': {
-      background: '#f7f7f7',
-    }
-  },
-});
 
 const mapStateToProps = (state) => ({
   users: _.get(state, 'userList.userList', []),
@@ -52,7 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-class IndexPage extends Component {
+class DemoPage extends Component {
   constructor(props) {
     super(props);
   }
@@ -93,4 +66,43 @@ class IndexPage extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
+const styles = StyleSheet.create({  
+    scrollView: {
+      backgroundColor: Colors.lighter,
+    },
+    engine: {
+      position: 'absolute',
+      right: 0,
+    },
+    body: {
+      backgroundColor: Colors.white,
+    },
+    sectionContainer: {
+      marginTop: 32,
+      paddingHorizontal: 24,
+    },
+    sectionTitle: {
+      fontSize: 24,
+      fontWeight: '600',
+      color: Colors.black,
+    },
+    sectionDescription: {
+      marginTop: 8,
+      fontSize: 18,
+      fontWeight: '400',
+      color: Colors.dark,
+    },
+    highlight: {
+      fontWeight: '700',
+    },
+    footer: {
+      color: Colors.dark,
+      fontSize: 12,
+      fontWeight: '600',
+      padding: 4,
+      paddingRight: 12,
+      textAlign: 'right',
+    }
+  });
+
+export default connect(mapStateToProps, mapDispatchToProps)(DemoPage);

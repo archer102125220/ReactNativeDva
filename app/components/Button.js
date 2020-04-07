@@ -13,7 +13,7 @@ class Button extends Component {
   render() {
       const {props}=this;
       const { children } = props;
-      const style=(props.style !== undefined?props.style:styles);
+      const style={ ...styles, ...( props.style || {} )};
 
       return (
         <TouchableOpacity style={style.button} {...props}>
