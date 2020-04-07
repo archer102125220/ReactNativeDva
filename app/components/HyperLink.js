@@ -6,7 +6,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class A extends Component {
+class HyperLink extends Component {
   state = {
   }
 
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default A;
+export default HyperLink;

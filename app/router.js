@@ -10,18 +10,12 @@ import DemoPage from './containers/DemoPage';
 class HomeNavigator extends Component {
     constructor(props){
         super(props);
-        const Navigator = createBottomTabNavigator();
-        Navigator.navigationOptions = ({ navigation }) => {
-            const { routeName } = navigation.state.routes[navigation.state.index];
-            return {
-              headerTitle: routeName,
-            }
-        };
+        const Navigator = createBottomTabNavigator()
         this.state = { ...Navigator };
     }
 
     render(){
-        const { props } =this;
+        const { props, navigationOptions } = this;
         const { Navigator, Screen }=this.state;
 
         return(
