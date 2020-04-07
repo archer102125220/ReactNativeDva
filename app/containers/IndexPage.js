@@ -53,15 +53,16 @@ class IndexPage extends Component {
         <Text h1 style={styles.title}>Yay! Welcome to dva!</Text>
         <ImageBackground source={yay} style={styles.welcome}/>
         <FlatList style={styles.list} data={[
-          { id:1,
+          {
+            key:'1',
             content:(<>To get started, edit <Text style={styles.code}>src/index.js</Text> and save to reload.</>)
           },
           {
-            id:2,
+            key:'2',
             content:(<HyperLink href='https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md'>Getting Started</HyperLink>)
           }
         ]}
-        renderItem={({ item }) => (<Text style={styles.title}>{item.content}</Text>)}
+          renderItem={({ item }) => (<Text style={styles.title}>{item.content}</Text>)}
          />
       </View>
     );
