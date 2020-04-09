@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
-  TouchableOpacity
+  Linking 
 } from 'react-native';
 
 class HyperLink extends Component {

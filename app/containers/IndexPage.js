@@ -11,7 +11,7 @@ const styles =  StyleSheet.create({
   normal: {
     fontFamily: 'Georgia, sans-serif',
     marginTop: '0.1%',//'3em'
-    textAlign: 'center',
+    alignItems: 'center',
     height: 2000
   },
   title: {
@@ -52,18 +52,20 @@ class IndexPage extends Component {
       <View style={styles.normal}>
         <Text h1 style={styles.title}>Yay! Welcome to dva!</Text>
         <ImageBackground source={yay} style={styles.welcome}/>
-        <FlatList style={styles.list} data={[
-          {
-            key:'1',
-            content:(<>To get started, edit <Text style={styles.code}>src/index.js</Text> and save to reload.</>)
-          },
-          {
-            key:'2',
-            content:(<HyperLink href='https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md'>Getting Started</HyperLink>)
-          }
-        ]}
-          renderItem={({ item }) => (<Text style={styles.title}>{item.content}</Text>)}
+        <View style={styles.list}>
+          <FlatList data={[
+            {
+              key:'1',
+              content:(<>To get started, edit <Text style={styles.code}>src/index.js</Text> and save to reload.</>)
+            },
+            {
+              key:'2',
+              content:(<HyperLink href='https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md'>Getting Started</HyperLink>)
+            }
+          ]}
+            renderItem={({ item }) => (<Text style={styles.title}>{item.content}</Text>)}
          />
+        </View>
       </View>
     );
   }

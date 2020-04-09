@@ -6,6 +6,7 @@ import {  NavigationContainer } from '@react-navigation/native';
 
 import IndexPage from './containers/IndexPage';
 import DemoPage from './containers/DemoPage';
+import Login from './containers/Login';
 
 class HomeNavigator extends Component {
     constructor(props){
@@ -40,6 +41,7 @@ class MainNavigator extends Component {
 
         return(
             <Navigator {...props}>
+                <Screen {...props} name='Login' component={Login} />
                 <Screen {...props} name='HomeNavigator' component={HomeNavigator} />
             </Navigator>
         );
