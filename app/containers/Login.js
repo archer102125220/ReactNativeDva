@@ -44,7 +44,7 @@ class Login extends Component {
 
   render() {
     const { navigation } = this.props;
-    console.log(navigation.dispatch);
+    
     return (
       <View style={styles.container}>
         <Text>

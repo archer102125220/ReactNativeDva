@@ -11,12 +11,20 @@ class HyperLink extends Component {
   }
 
   render() {
-      const {props}=this;
+      const { props }=this;
       const { children,href } = props;
-      const style={ ...styles, ...( props.style || {} )};
-
+      const style = { ...styles, ...( props.style || {} )};
+      const { onPress } = props;
+      const press = (...params) => {
+        Linking.openURL(href);
+        (onPress || (()=>{}))(params);
+      };
+      const params = {
+        ...props,
+        onPress:press
+      };
       return (
-        <Text style={style.hyperLink} onPress={() => Linking.openURL(href)} {...props}>
+        <Text style={style.hyperLink} onPress={() => Linking.openURL(href)} {...params}>
           {children}
         </Text>);
   }
