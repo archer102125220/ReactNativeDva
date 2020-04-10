@@ -3,6 +3,7 @@ import { BackHandler, Animated, Easing } from 'react-native';
 import {  createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {  createStackNavigator } from '@react-navigation/stack';
 import {  NavigationContainer } from '@react-navigation/native';
+//https://reactnavigation.org/docs/stack-actions/
 
 import IndexPage from './containers/IndexPage';
 import DemoPage from './containers/DemoPage';

@@ -30,7 +30,14 @@ class DemoPage extends Component {
     super(props);
   }
 
+  componentDidUpdate(){
+    const { users } = this.props;
+    console.log(users);
+  }
+
   render() {
+    const { GET_UserList } = this.props;
+
     return (
         <>
             <StatusBar barStyle='dark-content' />
@@ -52,7 +59,7 @@ class DemoPage extends Component {
                     screen and then come back to see your edits.
                 </Text>
                 </View>
-                <Button onPress={function(){ console.log('按到我了') }}>
+                <Button onPress={function(){ console.log('按到我了');GET_UserList(); }}>
                   TouchableOpacity Button
                 </Button>
             </View>
