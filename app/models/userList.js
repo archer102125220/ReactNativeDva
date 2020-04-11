@@ -16,9 +16,9 @@ export default {
 
   effects: {
     *GET_UserList({ payload }, { call, put }) {  // eslint-disable-line
-      //const data = yield call(GET_userList);
-      //yield put({ type: 'set_user_list', payload: data });
-      yield put({ type: 'set_user_list', payload: [456] });
+      const data = yield call(GET_userList);
+      yield put({ type: 'set_user_list', payload: data });
+      //yield put({ type: 'set_user_list', payload: [456] });
     },
     *SOCKET_UserList({ payload, callback, loading, token }, { call, put }) {  // eslint-disable-line
       // const data = yield call(GET_userList, 'testEvent', payload, token);

@@ -4,6 +4,6 @@
   "displayName": "ReactNativeDva",
   "SERVER_PREFIX": "api",
   "SERVER_PORT": 8000,
-  "SERVER_HOST": "localhost",
+  "SERVER_HOST": "192.168.0.103",
   "SERVER_PROTOCOL": "http"
 }
