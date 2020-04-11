@@ -3,13 +3,13 @@ import fetch from './../utils/request';
 
 
 export function GET_userList(payload = {}, token = '') {
-  return fetch('GET', '/users', payload);
-  /*return fetch('GET', '/api/users', payload, {
+  //return fetch('GET', '/users', payload);
+  return fetch('GET', '/users', payload, {
     headers: {
       // eslint-disable-next-line no-useless-escape
       Authorization: token.replace(/\"/g, '')
     }
-  });*/
+  });
 }
 
 // export function SOCKET_UserList(eventName = '') {
