@@ -53,7 +53,7 @@ class Login extends Component {
         <Button onPress={() =>
           navigation.dispatch(
             CommonActions.navigate({
-              name: 'HomeNavigator',
+              name: 'TabNavigator',
               //params: {
               //  user: 'jane',
               //},

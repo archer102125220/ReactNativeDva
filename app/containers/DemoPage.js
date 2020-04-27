@@ -32,7 +32,7 @@ class DemoPage extends Component {
 
   componentDidUpdate(){
     const { users } = this.props;
-    console.log(users);
+    //console.log(users);
   }
 
   render() {
@@ -59,7 +59,7 @@ class DemoPage extends Component {
                     screen and then come back to see your edits.
                 </Text>
                 </View>
-                <Button onPress={function(){ console.log('按到我了');GET_UserList(); }}>
+                <Button onPress={function(){ GET_UserList(); }}>
                   TouchableOpacity Button
                 </Button>
             </View>

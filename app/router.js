@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BackHandler, Animated, Easing } from 'react-native';
 import {  createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {  createStackNavigator } from '@react-navigation/stack';
 import {  NavigationContainer } from '@react-navigation/native';
@@ -9,21 +8,47 @@ import IndexPage from './containers/IndexPage';
 import DemoPage from './containers/DemoPage';
 import Login from './containers/Login';
 
-class HomeNavigator extends Component {
+const tabComponents = [
+    { key: 'IndexPage', name: 'IndexPage', component: IndexPage },
+    { key: 'DemoPage', name: 'DemoPage', component: DemoPage },
+];
+
+const navigatorComponent = [
+    { key: 'Login', name: 'Login', component: Login },
+    { key: 'TabNavigator', name: 'TabNavigator', component: TabNavigator, params:{ renderElements:tabComponents } }
+];
+
+class TabNavigator extends Component {
     constructor(props){
         super(props);
-        const Navigator = createBottomTabNavigator()
+        const Navigator = createBottomTabNavigator();
         this.state = { ...Navigator };
+    }
+
+    renderTabNavigators = (r, props) => {
+        const { key, name, component, params } = r;
+        const { Navigator, Screen } = this.state;
+
+        return (
+            <Navigator>
+                <Screen
+                    key={`tab-${key}`}
+                    name={name}
+                    component={component}
+                    params={params}
+                />
+            </Navigator>
+        );
     }
 
     render(){
         const { props, navigationOptions } = this;
         const { Navigator, Screen }=this.state;
-
+        //console.log(props);
         return(
-            <Navigator {...props}>
-                <Screen {...props} name='IndexPage' component={IndexPage} />
-                <Screen {...props} name='DemoPage' component={DemoPage} />
+            <Navigator>
+                <Screen name='IndexPage' component={IndexPage} />
+                <Screen name='DemoPage' component={DemoPage} />
             </Navigator>
         );
     }
@@ -37,13 +62,13 @@ class MainNavigator extends Component {
     }
 
     render(){
-        const { props } =this;
-        const { Navigator, Screen }=this.state;
+        const { props } = this;
+        const { Navigator, Screen } = this.state;
 
         return(
-            <Navigator {...props}>
-                <Screen {...props} name='Login' component={Login} />
-                <Screen {...props} name='HomeNavigator' component={HomeNavigator} />
+            <Navigator>
+                <Screen name='Login' component={Login} />
+                <Screen name='TabNavigator' component={TabNavigator} />
             </Navigator>
         );
     }
@@ -52,14 +77,29 @@ class MainNavigator extends Component {
 class Router extends Component {
     constructor(props){
         super(props);
+        const StackNavigator = createStackNavigator();
+        this.state = { ...StackNavigator };
     }
 
-    state={}
+    renderStackNavigators = (r, props) => {
+        const { key, name, component } = r;
+        const { Navigator, Screen } = this.state;
+
+        return (
+            <Navigator>
+                <Screen
+                    key={`stack-${key}`}
+                    name={name}
+                    component={component}
+                />
+            </Navigator>
+        );
+    }
 
     render() {
-        const {props} =this.props;
-        return(<NavigationContainer {...props}>
-            <MainNavigator  {...props}/>
+        const { props } = this;
+        return(<NavigationContainer>
+            <MainNavigator />
         </NavigationContainer>);
     }
 }

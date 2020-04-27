@@ -24,5 +24,24 @@ class Socket extends Io {
     }
 }
 
+/*
+//https://stackoverflow.com/questions/53638667/unrecognized-websocket-connection-options-agent-permessagedeflate-pfx
+{
+  timeout: 10000,
+  jsonp: false,
+  transports: [‘websocket’],
+  autoConnect: false,
+  agent: ‘-’,
+  path: ‘/’, // Whatever your path is
+  pfx: ‘-’,
+  key: token, // Using token-based auth.
+  passphrase: cookie, // Using cookie auth.
+  cert: ‘-’,
+  ca: ‘-’,
+  ciphers: ‘-’,
+  rejectUnauthorized: ‘-’,
+  perMessageDeflate: ‘-’
+}
+*/
 
 export default new Socket(socketURL);
