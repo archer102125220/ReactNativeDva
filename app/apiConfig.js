@@ -1,4 +1,4 @@
-import config from './../app.json';
+import config from './../env.json';
 
 const apiConfig = {
     SERVER_PREFIX: config.SERVER_PREFIX || '',

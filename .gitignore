@@ -61,4 +61,4 @@ buck-out/
 /ios/Podfile.lock
 
 #env
-app.json
+env.json

@@ -48,9 +48,9 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { navigation, route } = this.props;
+    const { route } = this.props;
     const { name } = route;
-    console.log(name);
+    //console.log(name);
     return (
       <View style={styles.normal}>
         <Text h1 style={styles.title}>Yay! Welcome to dva!</Text>

@@ -30,7 +30,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(
 
         render() {
             const { props } = this;
-            const { children/*, history*/ } = props;
+            const { children , route/*, history*/ } = props;
+            const { name } = route;
+            console.log(name);
             // const { location } = history;
             // const { pathname } = location;
             return (

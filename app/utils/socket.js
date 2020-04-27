@@ -1,7 +1,7 @@
 
 import Io from 'socket.io-client';
 import api from './../apiConfig';
-import config from './../../app.json';
+import config from './../../env.json';
 
 const { socket: socketURL } = api;
 const nodeEnv = config.NODE_ENV;
