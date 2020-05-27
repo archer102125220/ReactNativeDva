@@ -1,10 +1,10 @@
 
 import Io from 'socket.io-client';
 import api from './../apiConfig';
-import config from './../../env.json';
+import { NODE_ENV } from 'react-native-dotenv';
 
 const { socket: socketURL } = api;
-const nodeEnv = config.NODE_ENV;
+const nodeEnv = NODE_ENV;
 
 class Socket extends Io {
     constructor(props) {

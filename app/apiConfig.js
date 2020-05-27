@@ -1,10 +1,10 @@
-import config from './../env.json';
+import { SERVER_PREFIX, SERVER_PORT, SERVER_HOST, SERVER_PROTOCOL} from 'react-native-dotenv';
 
 const apiConfig = {
-    SERVER_PREFIX: config.SERVER_PREFIX || '',
-    SERVER_PORT: config.SERVER_PORT || 8000,
-    SERVER_HOST: config.SERVER_HOST || 'localhost',
-    SERVER_PROTOCOL: config.SERVER_PROTOCOL || 'http'
+    SERVER_PREFIX: SERVER_PREFIX || '',
+    SERVER_PORT: SERVER_PORT || 8000,
+    SERVER_HOST: SERVER_HOST || 'localhost',
+    SERVER_PROTOCOL: SERVER_PROTOCOL || 'http'
 };
 
 export default {

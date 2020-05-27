@@ -32,7 +32,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             const { props } = this;
             const { children , route/*, history*/ } = props;
             const { name } = route;
-            console.log(name);
+            console.log({ name });
             // const { location } = history;
             // const { pathname } = location;
             return (
