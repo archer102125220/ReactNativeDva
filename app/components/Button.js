@@ -14,7 +14,7 @@ class Button extends Component {
       const { props } = this;
       const { children } = props;
       const style = { ...styles, ...( props.style || {} )};
-      console.log({ navigation: props.navigation });
+      console.log('button', { props, navigation: props.navigation });
       return (
         <TouchableOpacity style={style.button} {...props}>
           <Text style={styles.buttonText}>{children}</Text>

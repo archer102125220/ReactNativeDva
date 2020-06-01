@@ -50,6 +50,7 @@ class IndexPage extends Component {
   render() {
     const { route } = this.props;
     const { name } = route;
+    console.log('index', { props:this.props, navigation:this.props.navigation });
     //console.log(name);
     return (
       <View style={styles.normal}>

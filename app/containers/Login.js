@@ -43,14 +43,15 @@ class Login extends Component {
   //}
 
   render() {
-    const { navigation } = this.props;
+    const { props } = this;
+    const { navigation } = props;
     
     return (
       <View style={styles.container}>
         <Text>
           My first React Native app
         </Text>
-        <Button onPress={() =>
+        <Button {...props} onPress={() =>
           navigation.dispatch(
             CommonActions.navigate({
               name: 'TabNavigator',
