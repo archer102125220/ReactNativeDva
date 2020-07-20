@@ -18,7 +18,7 @@
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
     "dva-core": "^2.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "metro-react-native-babel-preset": "^0.59.0",
     "react": "16.11.0",
     "react-native": "0.62.0",
