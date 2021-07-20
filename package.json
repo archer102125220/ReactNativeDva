@@ -21,7 +21,7 @@
     "lodash": "^4.17.15",
     "metro-react-native-babel-preset": "^0.59.0",
     "react": "16.11.0",
-    "react-native": "0.62.0",
+    "react-native": "0.62.3",
     "react-native-dotenv": "^0.2.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-safe-area-context": "^0.7.3",
